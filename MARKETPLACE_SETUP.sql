@@ -426,11 +426,17 @@ CREATE POLICY "notifications_select_owner" ON marketplace_notifications
     auth.uid() IS NOT NULL
   );
 
-CREATE POLICY "notifications_insert_admin_only" ON marketplace_notifications
-  FOR INSERT WITH CHECK (is_admin_user());
+CREATE POLICY "notifications_insert_admin_or_owner" ON marketplace_notifications
+  FOR INSERT WITH CHECK (
+    is_admin_user() OR
+    created_by::text = auth.uid()::text
+  );
 
-CREATE POLICY "notifications_update_admin" ON marketplace_notifications
-  FOR UPDATE USING (is_admin_user());
+CREATE POLICY "notifications_update_admin_or_owner" ON marketplace_notifications
+  FOR UPDATE USING (
+    is_admin_user() OR
+    created_by::text = auth.uid()::text
+  );
 
 -- ============================================
 -- FUNÇÕES ÚTEIS PARA ADMIN

@@ -466,6 +466,19 @@ export default function Sorteios() {
     }
 
     try {
+      // Garantir created_by válido extraído do business logado
+      const ownerId = business?.id;
+      if (!ownerId) {
+        throw new Error('Usuário não autenticado ou sem ID. Faça login novamente.');
+      }
+
+      payload.created_by = ownerId;
+      if (!payload.business_id && notificationTarget === 'all') {
+        payload.business_id = ownerId;
+      }
+
+      console.log('Enviar notificação payload', payload);
+
       const { error } = await supabase
         .from('marketplace_notifications')
         .insert(payload);

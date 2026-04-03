@@ -44,7 +44,9 @@ export default function Home() {
             <Link href="/vagas" className="text-gray-700 hover:text-blue-600 transition font-semibold">Vagas</Link>
             <Link href="/suporte" className="text-gray-700 hover:text-blue-600 transition font-semibold">Suporte</Link>
             <Link href="/marketplace/servicos" className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-4 py-2 rounded-lg font-bold transition shadow-lg"> Marketplace</Link>
-            <Link href="/contato" className="text-gray-700 hover:text-blue-600 transition font-semibold">Contacto</Link>
+            <Link href="/contato" className="text-gray-700 hover:text-blue-600 transition font-semibold">Contato</Link>
+            <Link href="/termos" className="text-gray-700 hover:text-blue-600 transition font-semibold">Termos</Link>
+            <Link href="/privacidade" className="text-gray-700 hover:text-blue-600 transition font-semibold">Privacidade</Link>
             <Link href="/vip" className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-black px-4 py-2 rounded-full font-bold transition shadow-lg animate-pulse"> VIP</Link>
           </div>
         </div>
@@ -101,6 +103,29 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tools" className="py-12 bg-gradient-to-r from-gray-100 to-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-2">Ferramentas e Links Rápidos</h2>
+            <p className="text-gray-600">Acesse rapidamente cadastro, agendamentos e suporte.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link href="/marketplace/empresario/login" className="border border-gray-300 rounded-lg p-4 hover:shadow-lg transition">
+              <h3 className="font-bold mb-2">Login Empresário</h3>
+              <p>Gerencie seus serviços, disponibilidade e notificações.</p>
+            </Link>
+            <Link href="/marketplace/empresario/registar" className="border border-gray-300 rounded-lg p-4 hover:shadow-lg transition">
+              <h3 className="font-bold mb-2">Registrar Empresa</h3>
+              <p>Crie seu perfil de negócio e comece a vender.</p>
+            </Link>
+            <Link href="/suporte/chat" className="border border-gray-300 rounded-lg p-4 hover:shadow-lg transition">
+              <h3 className="font-bold mb-2">Suporte Chat</h3>
+              <p>Fale com nossa equipe em tempo real.</p>
+            </Link>
           </div>
         </div>
       </section>
